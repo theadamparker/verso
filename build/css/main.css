@@ -56,11 +56,16 @@ table {
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh; }
+  height: 100vh;
+  justify-content: space-between; }
 
 .top,
 .bottom {
   display: flex; }
+  @media (max-width: 600px) {
+    .top,
+    .bottom {
+      flex-direction: column; } }
 
 .top {
   background: #fff;
@@ -75,7 +80,7 @@ table {
   color: #fff; }
 
 .title {
-  flex: 1;
+  width: 200px;
   padding: 10px; }
 
 .title__number {
@@ -86,9 +91,16 @@ table {
   font-size: 24px; }
 
 .video {
-  flex: 2; }
-  .video img {
-    max-height: 50vh; }
+  flex: 1; }
+  .video img,
+  .video video {
+    max-height: 50vh;
+    width: 100%; }
+    @media (max-width: 600px) {
+      .video img,
+      .video video {
+        max-height: auto; } }
 
-img {
+img,
+video {
   max-width: 100%; }
