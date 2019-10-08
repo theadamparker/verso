@@ -1,0 +1,30 @@
+{
+  "name": "verso",
+  "version": "1.0.0",
+  "description": "verso description",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theadamparker/verso.git"
+  },
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Parker",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "browser-sync": "^2.26.5",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "browserslist": [
+    "> .5%",
+    "ie >= 9",
+    "safari >= 6"
+  ]
+}
