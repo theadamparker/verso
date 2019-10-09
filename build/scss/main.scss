@@ -50,14 +50,17 @@ table {
 /** VARIABLES **/
 
 // COLOR
-$dark: #000;
+$dark: #1e1e1b;
 $light: #fff;
+$blue: #2d2692;
+$yellow: #c1c66f;
 
 // TYPE
 $sansSerif: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$mono: "courier", monospace;
 
 // SIZES
-$gutter: 20px;
+$pad: 20px;
 $mobile-width: 600px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
@@ -104,6 +107,39 @@ $extraLarge-width: 1600px;
   box-sizing: border-box;
 }
 
+header {
+	position: absolute;
+	top: $pad;
+	left: $pad;
+	width: calc(100% - #{$pad});
+	z-index: 2;
+
+	@include mobile {
+		position: fixed;
+		background: rgba(255,255,255,.5);
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: $pad;
+	}
+}
+
+.logo {
+	width: 100px;
+}
+
+.controls {
+	position: absolute;
+	bottom: $pad;
+	right: $pad;
+	z-index: 2;
+}
+
+.controls__button {
+	padding: 5px 10px;
+	background: $light;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -114,50 +150,94 @@ $extraLarge-width: 1600px;
 .top,
 .bottom {
   display: flex;
+	height: 50%;
+	overflow: hidden;
+	justify-content: space-between;
 
 	@include mobile {
 		flex-direction: column;
+		align-items: center;
+		height: 50vh;
 	}
 }
 
 .top {
   background: $light;
   flex: 1;
-  height: 50%;
   color: $dark;
 }
 
 .bottom {
   background: $dark;
   flex: 1;
-  height: 50%;
   color: $light;
 }
 
 .title {
-  width: 200px;
-  padding: 10px;
+  width: 30%;
+	max-width: 500px;
+  padding: $pad;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@include mobile {
+		width: 100%;
+		max-width: none;
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-between;
+	}
 }
 
 .title__number {
-  font-family: 'georgia', times, serif;
-  font-size: 24px;
+	font-family: $sansSerif;
+  font-size: 20px;
+	line-height: 1.2;
+	padding: 10px;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	text-align: center;
+	margin-bottom: $pad;
+
+	@include mobile {
+		margin-right: $pad;
+	}
+
+	.top & {
+		background: $blue;
+		color: $light;
+	}
+
+	.bottom & {
+		background: $yellow;
+		color: $dark;
+	}
 }
 
 .title__name {
-  font-size: 24px;
+  font-size: 22px;
+	font-family: $mono;
+	line-height: 1.2;
+	margin-bottom: $pad;
+
+	@include mobile {
+		font-size: 18px;
+		margin-right: $pad;
+	}
+}
+
+.title__details{
+  font-size: 14px;
+	font-family: $mono;
+	line-height: 1.2;
+	opacity: .3;
 }
 
 .video {
-  flex: 1;
-  img,
 	video {
-    max-height: 50vh;
-		width: 100%;
-
-		@include mobile {
-			max-height: auto;
-		}
+		max-height: 50vh;
   }
 }
 
