@@ -145,8 +145,16 @@ header {
 }
 
 .controls__button {
-	padding: 5px 10px;
-	background: $light;
+	padding: 11px 17px;
+	border-radius: 5px;
+	background: $blue;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: $light;
+	font-family: $sansSerif;
+	font-size: 17px;
+	cursor: pointer;
+	box-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
 
 .sliderWrapper {
@@ -181,14 +189,15 @@ header {
 .top,
 .bottom {
   display: flex;
-	height: 50%;
+	height: 50vh; /* Fallback for browsers that do not support Custom Properties */
+	height: calc(var(--vh, 1vh) * 50);
 	overflow: hidden;
 	justify-content: space-between;
 
 	@include mobile {
 		flex-direction: column;
 		align-items: center;
-		height: 40vh;
+		// height: 40vh;
 	}
 }
 
@@ -270,7 +279,8 @@ header {
 
 .video {
 	video {
-		max-height: 50vh;
+		max-height: 50vh; /* Fallback for browsers that do not support Custom Properties */
+		max-height: calc(var(--vh, 1vh) * 50);
 
 		@include mobile {
 
