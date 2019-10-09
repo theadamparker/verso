@@ -77,19 +77,22 @@ header {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  z-index: 2; }
+  z-index: 2;
+  display: flex; }
 
 .controls__button {
   padding: 11px 17px;
   border-radius: 5px;
-  background: #2d2692;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #fff;
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 17px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }
+  cursor: pointer; }
+
+.controls__button--next {
+  background: #2d2692;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  color: #fff; }
 
 .sliderWrapper {
   width: 100%;

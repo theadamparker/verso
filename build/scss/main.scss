@@ -142,19 +142,26 @@ header {
 	bottom: $pad;
 	right: $pad;
 	z-index: 2;
+	display: flex;
 }
 
 .controls__button {
 	padding: 11px 17px;
 	border-radius: 5px;
-	background: $blue;
+
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: $light;
+
 	font-family: $sansSerif;
 	font-size: 17px;
 	cursor: pointer;
+
+}
+
+.controls__button--next {
+	background: $blue;
 	box-shadow: 0 2px 5px rgba(0,0,0,.5);
+	color: $light;
 }
 
 .sliderWrapper {
