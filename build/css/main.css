@@ -78,7 +78,8 @@ header {
   bottom: 20px;
   right: 20px;
   z-index: 2;
-  display: flex; }
+  display: flex;
+  opacity: .3; }
 
 .controls__button {
   padding: 11px 17px;
@@ -133,7 +134,9 @@ header {
     .top,
     .bottom {
       flex-direction: column;
-      align-items: center; } }
+      align-items: center;
+      justify-content: start;
+      height: 20vh; } }
 
 .top {
   background: #fff;
@@ -206,6 +209,9 @@ header {
   max-height: 50vh;
   /* Fallback for browsers that do not support Custom Properties */
   max-height: calc(var(--vh, 1vh) * 50); }
+  @media (max-width: 600px) {
+    .video video {
+      max-height: 20vh; } }
 
 img,
 video {

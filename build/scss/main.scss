@@ -143,6 +143,7 @@ header {
 	right: $pad;
 	z-index: 2;
 	display: flex;
+	opacity: .3;
 }
 
 .controls__button {
@@ -205,7 +206,8 @@ header {
 	@include mobile {
 		flex-direction: column;
 		align-items: center;
-		// height: 40vh;
+		justify-content: start;
+		height: 20vh;
 	}
 }
 
@@ -295,7 +297,7 @@ header {
 		max-height: calc(var(--vh, 1vh) * 50);
 
 		@include mobile {
-
+			max-height: 20vh;
 		}
   }
 }
