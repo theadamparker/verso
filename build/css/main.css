@@ -124,7 +124,8 @@ header {
   /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 50);
   overflow: hidden;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background-size: contain; }
   @media (max-width: 600px) {
     .top,
     .bottom {
@@ -134,12 +135,16 @@ header {
 .top {
   background: #fff;
   flex: 1;
-  color: #1e1e1b; }
+  color: #1e1e1b;
+  background: url("../img/paper-bg-light.jpg") no-repeat;
+  background-position: left top; }
 
 .bottom {
   background: #1e1e1b;
   flex: 1;
-  color: #fff; }
+  color: #fff;
+  background: url("../img/paper-bg-dark.jpg") no-repeat;
+  background-position: left bottom; }
 
 .title {
   width: 30%;

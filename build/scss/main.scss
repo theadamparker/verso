@@ -193,6 +193,7 @@ header {
 	height: calc(var(--vh, 1vh) * 50);
 	overflow: hidden;
 	justify-content: space-between;
+	background-size: contain;
 
 	@include mobile {
 		flex-direction: column;
@@ -205,12 +206,16 @@ header {
   background: $light;
   flex: 1;
   color: $dark;
+	background: url('../img/paper-bg-light.jpg') no-repeat;
+	background-position: left top;
 }
 
 .bottom {
   background: $dark;
   flex: 1;
   color: $light;
+	background: url('../img/paper-bg-dark.jpg') no-repeat;
+	background-position: left bottom;
 }
 
 .title {
