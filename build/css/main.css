@@ -53,6 +53,13 @@ table {
 *::after {
   box-sizing: border-box; }
 
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
 header {
   position: absolute;
   top: 20px;
@@ -81,11 +88,31 @@ header {
   padding: 5px 10px;
   background: #fff; }
 
-.wrapper {
+.sliderWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.slide {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: space-between; }
+  justify-content: space-between;
+  transition-delay: 0s;
+  z-index: 0;
+  transition: transform 700ms;
+  transform: scale(1); }
 
 .top,
 .bottom {
@@ -98,7 +125,7 @@ header {
     .bottom {
       flex-direction: column;
       align-items: center;
-      height: 50vh; } }
+      height: 40vh; } }
 
 .top {
   background: #fff;
@@ -123,7 +150,8 @@ header {
       max-width: none;
       flex-direction: row;
       align-items: baseline;
-      justify-content: space-between; } }
+      justify-content: space-between;
+      padding: calc(20px/2); } }
 
 .title__number {
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -153,7 +181,8 @@ header {
   @media (max-width: 600px) {
     .title__name {
       font-size: 18px;
-      margin-right: 20px; } }
+      margin-right: 20px;
+      margin-bottom: 0; } }
 
 .title__details {
   font-size: 14px;
@@ -167,3 +196,53 @@ header {
 img,
 video {
   max-width: 100%; }
+
+input[type=radio] {
+  position: relative;
+  z-index: 4;
+  top: 100%;
+  margin-left: 20px;
+  transform: translateY(-250%); }
+
+.slide:nth-of-type(1) {
+  left: 0; }
+
+.slide:nth-of-type(2) {
+  left: 100%; }
+
+.slide:nth-of-type(3) {
+  left: 200%; }
+
+.slide:nth-of-type(4) {
+  left: 300%; }
+
+.slide:nth-of-type(5) {
+  left: 400%; }
+
+.slide:nth-of-type(6) {
+  left: 500%; }
+
+.slide:nth-of-type(7) {
+  left: 600%; }
+
+/* Slider Slide Effect */
+.slide-radio1:checked ~ .slide {
+  transform: translateX(0%); }
+
+.slide-radio2:checked ~ .slide {
+  transform: translateX(-100%); }
+
+.slide-radio3:checked ~ .slide {
+  transform: translateX(-200%); }
+
+.slide-radio4:checked ~ .slide {
+  transform: translateX(-300%); }
+
+.slide-radio5:checked ~ .slide {
+  transform: translateX(-400%); }
+
+.slide-radio6:checked ~ .slide {
+  transform: translateX(-500%); }
+
+.slide-radio7:checked ~ .slide {
+  transform: translateX(-600%); }
