@@ -22,11 +22,12 @@ window.addEventListener('keydown', handleFirstTab);
 $(document).ready(function() {
   var $radios = $('input[class*="slide-radio"]');
   var radiosLength = $radios.length;
-  // console.log($radios);
 
   $('.controls__button--next').click(function() {
     handleNext();
-    // console.log($radios)
+  });
+  $('.controls__button--prev').click(function() {
+    handlePrev();
   });
 
   function handleNext() {
@@ -37,16 +38,43 @@ $(document).ready(function() {
     var currentIndex = $activeRadio.index();
 
     // uncheck everything
-    $radios.attr('checked', false);
-
-    // console.log(currentIndex);
+    $radios.prop('checked', false);
 
     // if we're on the last slider
     if (currentIndex >= radiosLength - 1) {
 
       $radios
         .first()
+        .prop('checked', true);
+
+    } else {
+
+      $activeRadio
+        .next('input[class*="slide-radio"]')
         .prop('checked', true); //// TODO: make this work
+    }
+  }
+
+  function handlePrev() {
+    // get active radio
+    var $activeRadio = $('input[class*="slide-radio"]:checked');
+
+    // find out which index number it is
+    var currentIndex = $activeRadio.index();
+
+    console.log(currentIndex)
+
+    // uncheck everything
+    $radios.prop('checked', false);
+
+    // console.log(currentIndex);
+
+    // if we're on the first slider
+    if (currentIndex == 0) {
+
+      $radios
+        .last()
+        .prop('checked', true);
       console.log("if true");
       // console.log($radios)
       // console.log($radios.first())
@@ -54,11 +82,9 @@ $(document).ready(function() {
     } else {
 
       $activeRadio
-        .next('input[class*="slide-radio"]')
+        .prev('input[class*="slide-radio"]')
         .prop('checked', true); //// TODO: make this work
       console.log("else true");
     }
-
   }
-
 });
