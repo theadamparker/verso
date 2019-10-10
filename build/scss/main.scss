@@ -216,6 +216,7 @@ header {
 		flex-direction: column;
 		align-items: center;
 		justify-content: start;
+		// justify-content: center;
 		// height: 50vh;
 		// height: calc(var(--vh, 1vh) * 50);
 	}
@@ -294,7 +295,7 @@ header {
 	margin-bottom: $pad;
 
 	@include mobile {
-		font-size: 18px;
+		font-size: 16px;
 		margin-right: $pad;
 		margin-bottom: 0;
 	}

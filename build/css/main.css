@@ -203,7 +203,7 @@ header {
   margin-bottom: 20px; }
   @media (max-width: 600px) {
     .title__name {
-      font-size: 18px;
+      font-size: 16px;
       margin-right: 20px;
       margin-bottom: 0; } }
 
@@ -217,8 +217,8 @@ header {
   max-height: 50vh; }
   @media (max-width: 600px) {
     .video video {
-      max-height: 40vh;
-      max-height: calc(var(--vh, 1vh) * 40); } }
+      max-height: 20vh;
+      max-height: calc(var(--vh, 1vh) * 20); } }
 
 img,
 video {
