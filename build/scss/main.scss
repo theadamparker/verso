@@ -134,7 +134,8 @@ header {
 }
 
 .logo {
-	width: 100px;
+	width: 80px;
+	fill: $dark;
 }
 
 .controls {
@@ -303,7 +304,8 @@ header {
 		max-height: 50vh;
 
 		@include mobile {
-			max-height: 20vh;
+			// max-height: 50vh;
+			max-height: 100%;
 		}
   }
 }
