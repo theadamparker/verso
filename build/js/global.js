@@ -19,44 +19,46 @@ window.addEventListener('keydown', handleFirstTab);
 // adaptation of this concept
 // https://designmodo.com/create-full-screen-slider/
 
-function handleNext() {
-
+$(document).ready(function() {
   var $radios = $('input[class*="slide-radio"]');
-  var $activeRadio = $('input[class*="slide-radio"]:checked');
-
-  var currentIndex = $activeRadio.index();
   var radiosLength = $radios.length;
+  // console.log($radios);
 
-  console.log("currentIndex: " + currentIndex);
-  console.log("radiosLength: " + radiosLength);
+  $('.controls__button--next').click(function() {
+    handleNext();
+    // console.log($radios)
+  });
 
-  $radios
-    .attr('checked', false);
+  function handleNext() {
+    // get active radio
+    var $activeRadio = $('input[class*="slide-radio"]:checked');
 
-  if (currentIndex >= radiosLength - 1) {
+    // find out which index number it is
+    var currentIndex = $activeRadio.index();
 
-    $radios
-      .first()
-      .attr('checked', true);
-      // console.log("if true");
+    // uncheck everything
+    $radios.attr('checked', false);
 
-  } else {
+    // console.log(currentIndex);
 
-    $activeRadio
-      .next('input[class*="slide-radio"]')
-      .attr('checked', true);
-      // console.log("else true");
+    // if we're on the last slider
+    if (currentIndex >= radiosLength - 1) {
+
+      $radios
+        .first()
+        .prop('checked', true); //// TODO: make this work
+      console.log("if true");
+      // console.log($radios)
+      // console.log($radios.first())
+
+    } else {
+
+      $activeRadio
+        .next('input[class*="slide-radio"]')
+        .prop('checked', true); //// TODO: make this work
+      console.log("else true");
+    }
+
   }
 
-}
-
-$('.controls__button--next').click(function() {
-  handleNext()
-  console.log("click")
 });
-
-// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-$(document).ready(function() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-})
