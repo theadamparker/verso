@@ -206,6 +206,7 @@ header {
 .top,
 .bottom {
   display: flex;
+	flex: 1;
 	height: 50vh;
 	overflow: hidden;
 	justify-content: space-between;
@@ -215,24 +216,31 @@ header {
 		flex-direction: column;
 		align-items: center;
 		justify-content: start;
-		height: 20vh;
+		// height: 50vh;
+		// height: calc(var(--vh, 1vh) * 50);
 	}
 }
 
 .top {
   background: $light;
-  flex: 1;
   color: $dark;
 	background: url('../img/paper-bg-light.jpg') no-repeat;
 	background-position: left top;
+
+	@include mobile {
+		flex: 4;
+	}
 }
 
 .bottom {
   background: $dark;
-  flex: 1;
   color: $light;
 	background: url('../img/paper-bg-dark.jpg') no-repeat;
 	background-position: left bottom;
+
+	@include mobile {
+		flex: 5;
+	}
 }
 
 .title {
@@ -304,8 +312,8 @@ header {
 		max-height: 50vh;
 
 		@include mobile {
-			// max-height: 50vh;
-			max-height: 100%;
+			max-height: 40vh;
+			max-height: calc(var(--vh, 1vh) * 40);
 		}
   }
 }

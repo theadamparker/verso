@@ -130,6 +130,7 @@ header {
 .top,
 .bottom {
   display: flex;
+  flex: 1;
   height: 50vh;
   overflow: hidden;
   justify-content: space-between;
@@ -139,22 +140,25 @@ header {
     .bottom {
       flex-direction: column;
       align-items: center;
-      justify-content: start;
-      height: 20vh; } }
+      justify-content: start; } }
 
 .top {
   background: #fff;
-  flex: 1;
   color: #1e1e1b;
   background: url("../img/paper-bg-light.jpg") no-repeat;
   background-position: left top; }
+  @media (max-width: 600px) {
+    .top {
+      flex: 4; } }
 
 .bottom {
   background: #1e1e1b;
-  flex: 1;
   color: #fff;
   background: url("../img/paper-bg-dark.jpg") no-repeat;
   background-position: left bottom; }
+  @media (max-width: 600px) {
+    .bottom {
+      flex: 5; } }
 
 .title {
   width: 30%;
@@ -213,7 +217,8 @@ header {
   max-height: 50vh; }
   @media (max-width: 600px) {
     .video video {
-      max-height: 100%; } }
+      max-height: 40vh;
+      max-height: calc(var(--vh, 1vh) * 40); } }
 
 img,
 video {

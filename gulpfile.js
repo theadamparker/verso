@@ -30,7 +30,8 @@ function watch() {
   });
   gulp.watch('build/scss/*.scss', style);
   gulp.watch('*.html').on('change', browserSync.reload);
-  gulp.watch('build/js/*.js').on('change', browserSync.reload);
+  // gulp.watch('build/js/*.js').on('change', browserSync.reload);
+  gulp.watch('build/js/*.js', scripts);
 }
 
 function scripts() {
