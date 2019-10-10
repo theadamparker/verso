@@ -36,8 +36,8 @@ function watch() {
 function scripts() {
   return gulp.src('build/js/*.js')
     .pipe(uglify())
-    .pipe(rename({ extname: '.min.js'}))
-    .pipe(dest('dist/js/'))
+    // .pipe(rename({ extname: '.min.js'}))
+    .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 }
 
@@ -47,3 +47,4 @@ gulp.task('default', watch);
 exports.style = style;
 exports.watch = watch;
 exports.uglify = uglify;
+exports.scripts = scripts;
