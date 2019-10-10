@@ -23,6 +23,8 @@ $(document).ready(function() {
   var $radios = $('input[class*="slide-radio"]');
   var radiosLength = $radios.length;
 
+  updateButtons()
+
   $('.controls__button--next').click(function() {
     handleNext();
   });
@@ -53,6 +55,7 @@ $(document).ready(function() {
         .next('input[class*="slide-radio"]')
         .prop('checked', true); //// TODO: make this work
     }
+    updateButtons()
   }
 
   function handlePrev() {
@@ -62,8 +65,6 @@ $(document).ready(function() {
     // find out which index number it is
     var currentIndex = $activeRadio.index();
 
-    console.log(currentIndex)
-
     // uncheck everything
     $radios.prop('checked', false);
 
@@ -71,20 +72,34 @@ $(document).ready(function() {
 
     // if we're on the first slider
     if (currentIndex == 0) {
-
       $radios
         .last()
         .prop('checked', true);
-      console.log("if true");
-      // console.log($radios)
-      // console.log($radios.first())
-
     } else {
-
       $activeRadio
         .prev('input[class*="slide-radio"]')
         .prop('checked', true); //// TODO: make this work
-      console.log("else true");
     }
+    updateButtons()
+  }
+
+  function updateButtons() {
+    // get active radio
+    var $activeRadio = $('input[class*="slide-radio"]:checked');
+    // find out which index number it is
+    var currentIndex = $activeRadio.index();
+
+    // if on the first item
+    if (currentIndex == 0) {
+      $('.controls__button--prev')
+        .addClass('controls__button--inactive')
+        .prop('disabled', true);
+    } else if (currentIndex >= radiosLength - 1) { // if on the last item
+      $('.controls__button--next').addClass('controls__button--inactive')
+    } else {
+      $('.controls__button--prev').removeClass('controls__button--inactive');
+      $('.controls__button--next').removeClass('controls__button--inactive')
+    }
+
   }
 });
