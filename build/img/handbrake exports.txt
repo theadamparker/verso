@@ -1,0 +1,41 @@
+handbrake --input '1a.mp4' --output '1a.webm' --preset Normal
+handbrake --input '1a.mp4' --output '1a.ogg' --preset Normal
+
+handbrake --input '1b.mp4' --output '1b.webm' --preset Normal
+handbrake --input '1b.mp4' --output '1b.ogg' --preset Normal
+
+handbrake --input '2a.mp4' --output '2a.webm' --preset Normal
+handbrake --input '2a.mp4' --output '2a.ogg' --preset Normal
+
+handbrake --input '2b.mp4' --output '2b.webm' --preset Normal
+handbrake --input '2b.mp4' --output '2b.ogg' --preset Normal
+
+handbrake --input '3a.mp4' --output '3a.webm' --preset Normal
+handbrake --input '3a.mp4' --output '3a.ogg' --preset Normal
+
+handbrake --input '3b.mp4' --output '3b.webm' --preset Normal
+handbrake --input '3b.mp4' --output '3b.ogg' --preset Normal
+
+handbrake --input '4a.mp4' --output '4a.webm' --preset Normal
+handbrake --input '4a.mp4' --output '4a.ogg' --preset Normal
+
+handbrake --input '4b.mp4' --output '4b.webm' --preset Normal
+handbrake --input '4b.mp4' --output '4b.ogg' --preset Normal
+
+handbrake --input '5a.mp4' --output '5a.webm' --preset Normal
+handbrake --input '5a.mp4' --output '5a.ogg' --preset Normal
+
+handbrake --input '5b.mp4' --output '5b.webm' --preset Normal
+handbrake --input '5b.mp4' --output '5b.ogg' --preset Normal
+
+handbrake --input '6a.mp4' --output '6a.webm' --preset Normal
+handbrake --input '6a.mp4' --output '6a.ogg' --preset Normal
+
+handbrake --input '6b.mp4' --output '6b.webm' --preset Normal
+handbrake --input '6b.mp4' --output '6b.ogg' --preset Normal
+
+handbrake --input '7a.mp4' --output '7a.webm' --preset Normal
+handbrake --input '7a.mp4' --output '7a.ogg' --preset Normal
+
+handbrake --input '7b.mp4' --output '7b.webm' --preset Normal
+handbrake --input '7b.mp4' --output '7b.ogg' --preset Normal
