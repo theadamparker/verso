@@ -48,14 +48,18 @@ $(document).ready(function() {
       $radios
         .first()
         .prop('checked', true);
+      $('.controls__button--next').html('Next'); // hacky solution
+      // updateButtons();
+      $('.controls__button--prev').css('display', 'none');
 
     } else {
 
       $activeRadio
         .next('input[class*="slide-radio"]')
-        .prop('checked', true); //// TODO: make this work
+        .prop('checked', true);
+      $('.controls__button--prev').css('display', 'block'); // hacky solution
+      updateButtons();
     }
-    updateButtons()
   }
 
   function handlePrev() {
@@ -75,12 +79,13 @@ $(document).ready(function() {
       $radios
         .last()
         .prop('checked', true);
+      updateButtons();
     } else {
       $activeRadio
         .prev('input[class*="slide-radio"]')
-        .prop('checked', true); //// TODO: make this work
+        .prop('checked', true);
+      updateButtons()
     }
-    updateButtons()
   }
 
   function updateButtons() {
@@ -92,13 +97,18 @@ $(document).ready(function() {
     // if on the first item
     if (currentIndex == 0) {
       $('.controls__button--prev')
-        .addClass('controls__button--inactive')
-        .prop('disabled', true);
+        // .addClass('controls__button--inactive')
+        .css('display', 'none');
     } else if (currentIndex >= radiosLength - 1) { // if on the last item
-      $('.controls__button--next').addClass('controls__button--inactive')
+      // $('.controls__button--next').addClass('controls__button--inactive');
+      $('.controls__button--next')
+        .html('Restart');
     } else {
-      $('.controls__button--prev').removeClass('controls__button--inactive');
-      $('.controls__button--next').removeClass('controls__button--inactive')
+      $('.controls__button--prev')
+        .removeClass('controls__button--inactive');
+      $('.controls__button--next')
+        .removeClass('controls__button--inactive')
+        .html('Next');
     }
   }
 });
