@@ -18,6 +18,19 @@ window.addEventListener('keydown', handleFirstTab);
 // adaptation of this concept
 // https://designmodo.com/create-full-screen-slider/
 
+var buttonClick = document.querySelectorAll('.controls__button');
+var videoList = document.querySelectorAll('video');
+
+function syncVideos() {
+  buttonClick.forEach(function(e) {
+      e.addEventListener('click', function() {
+          videoList.forEach(function(e) {
+              e.currentTime = 0
+          })
+      })
+  });
+}
+
 $(document).ready(function() {
   var $radios = $('input[class*="slide-radio"]');
   var radiosLength = $radios.length;
@@ -27,12 +40,12 @@ $(document).ready(function() {
   $('.controls__button--next').click(function() {
     handleNext();
     syncVideos()
-    ga('send', 'event', 'Navigation Click', 'Next Click', 'Next');
+    ga('send', 'event', 'Navigation', 'Next Click');
   });
   $('.controls__button--prev').click(function() {
     handlePrev();
     syncVideos()
-    ga('send', 'event', 'Navigation Click', 'Prev Click', 'Previous');
+    ga('send', 'event', 'Navigation', 'Prev Click');
   });
 
   function handleNext() {
@@ -115,12 +128,6 @@ $(document).ready(function() {
     }
   }
 });
-
-function syncVideos() {
-  $('video').each(function() {
-
-  })
-}
 
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 var vh = window.innerHeight * 0.01;
