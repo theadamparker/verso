@@ -15,7 +15,6 @@ function handleFirstTab(e) {
 
 window.addEventListener('keydown', handleFirstTab);
 
-
 // adaptation of this concept
 // https://designmodo.com/create-full-screen-slider/
 
@@ -27,9 +26,11 @@ $(document).ready(function() {
 
   $('.controls__button--next').click(function() {
     handleNext();
+    ga('send', 'event', 'Navigation Click', 'Next Click', buttonText);
   });
   $('.controls__button--prev').click(function() {
     handlePrev();
+    ga('send', 'event', 'Navigation Click', 'Prev Click', buttonText);
   });
 
   function handleNext() {
