@@ -26,11 +26,13 @@ $(document).ready(function() {
 
   $('.controls__button--next').click(function() {
     handleNext();
-    ga('send', 'event', 'Navigation Click', 'Next Click', buttonText);
+    syncVideos()
+    ga('send', 'event', 'Navigation Click', 'Next Click', 'Next');
   });
   $('.controls__button--prev').click(function() {
     handlePrev();
-    ga('send', 'event', 'Navigation Click', 'Prev Click', buttonText);
+    syncVideos()
+    ga('send', 'event', 'Navigation Click', 'Prev Click', 'Previous');
   });
 
   function handleNext() {
@@ -113,6 +115,12 @@ $(document).ready(function() {
     }
   }
 });
+
+function syncVideos() {
+  $('video').each(function() {
+
+  })
+}
 
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 var vh = window.innerHeight * 0.01;
